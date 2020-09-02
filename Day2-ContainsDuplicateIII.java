@@ -1,6 +1,6 @@
 class Solution {
-    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-       boolean found = false;
+      public static boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+	boolean found = false;
 	for (int i = 0; i < nums.length; i++) {
 	    for (int x = 1; x <= k; x++) {
 		if ((i + x) < nums.length) {
@@ -11,7 +11,9 @@ class Solution {
 		    }
 		}
 	    }
+	    if (found)
+		break;
 	}
-        return found;
+	return found;
     }
 }
